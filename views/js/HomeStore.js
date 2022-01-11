@@ -1,11 +1,11 @@
 var gEntreeCount = 0;
 // returns a number that represents the sum of all the selected menu
 // item prices.
-function calculateBasket(idFunitureTable) {
+function calculateBasket(idFurnitureTable) {
     var fBasketTotal = 0.0;
     var i = 0;
     // find the table tag
-    var oTable = document.getElementById(idFunitureTable);
+    var oTable = document.getElementById(idFurnitureTable);
     // go through the table and add up the prices of all
     // the selected items. The code takes advantage of the 
     // fact that each checkbox has a corresponding row in
@@ -60,7 +60,7 @@ function getParentTag(oNode, sParentType) {
 window.addEventListener("load", function () {
     document.forms[0].txtBasketAmt.value = calculateBasket('furnitureTable');
     document.querySelector("#calcBasket").addEventListener("click", function () {
-        document.forms[0].txtBasketAmt.value = calculateBill('menuTable');
+        document.forms[0].txtBasketAmt.value = calculateBill('furnitureTable');
     });
     document.querySelector("#showSustainable").addEventListener("click", function () {
         highlightSustainable('furnitureTable', this.checked);
