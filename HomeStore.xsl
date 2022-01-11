@@ -7,12 +7,12 @@
 				<title>Furniture HomeStore</title>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 				<style>
-				body{font-family:Arial,Helvetica,sans-serif;background-color:#fff;margin:5px;text-align:left;color:#523819}
+				body{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;background-color:#fff;margin:5px;text-align:left;color:#523819; background-image: url(img/background.webp); position: absolute;}
 				h2{font-size:140%;color:#0d3427;margin-top:10px}
-				p{font-size:80%;color:#523819}
-				table{background-color:#dacfe5;border-color:#000;border-width:thin;border-collapse:collapse;width:75%}
-				th{border-color:#000;font-size:120%;color:#0d3427}
-				td{border-color:#000;font-size:100%;color:#523819;padding:5px}
+				p{font-size:80%;color:black}
+				table{border-color:#000;border-width:thin;border-collapse:collapse;width:75%; ;}
+				th{border-color:#000;font-size:120%;color:black}
+				td{border-color:#000;font-size:100%;color:black;padding:5px}
 				img{float:left;margin-left:10px;margin-right:10px;border:0}
 				.indent{margin-left:78px}
 				</style>
@@ -20,11 +20,11 @@
 				var gEntreeCount = 0;
 				// returns a number that represents the sum of all the selected menu
 				// item prices.
-				function calculateBill(idMenuTable) {
-					var fBillTotal = 0.0;
+				function calculateBasket(idFurnitureTable) {
+					var fBasketTotal = 0.0;
 					var i = 0;
 					// find the table tag
-					var oTable = document.getElementById(idMenuTable);
+					var oTable = document.getElementById(idFurnitureTable);
 					// go through the table and add up the prices of all
 					// the selected items. The code takes advantage of the 
 					// fact that each checkbox has a corresponding row in
@@ -38,27 +38,26 @@
 							// retrieve the price from the price column, which is the third column in the table
 							var oTDPrice = oTR.getElementsByTagName('TD')[2];
 							// the first child text node of the column contains the price
-							fBillTotal += parseFloat(oTDPrice.firstChild.data);
+							fBasketTotal += parseFloat(oTDPrice.firstChild.data);
 						};
 					};
 					// return the price as a decimal number with 2 decimal places
-					return Math.round(fBillTotal * 100.0) / 100.0;
+					return Math.round(fBasketTotal * 100.0) / 100.0;
 				};
 
-				// This function either turns on or off the row highlighting for vegetarian
-				// items (depending on the value of bShowVeg)
-				function highlightVegetarian(idTable, bShowVeg) {
-					// if bShowVeg is true, then we're highlighting vegetarian
-					//	meals, otherwise we're unhighlighting them.
+				// This function either turns on or off the row highlighting for sustainable
+				// items (depending on the value of bShowSustainable)
+				function highlightSustainable(idTable, bShowSustainable) {
+					// if bShowSustainable is true, then we're highlighting sustainable
 					var i = 0;
 					var oTable = document.getElementById(idTable);
 					var oTBODY = oTable.getElementsByTagName('TBODY')[0];
 					var aTRs = oTBODY.getElementsByTagName('TR');
 					// walk through each of the table rows and see if it has a 
-					// "vegetarian" attribute on it.
+					// "sustainable" attribute on it.
 					for (i = 0; i < aTRs.length; i++) {
-						if (aTRs[i].getAttribute('vegetarian') && aTRs[i].getAttribute('vegetarian') == "true") {
-							if (bShowVeg) {
+						if (aTRs[i].getAttribute('sustainable') && aTRs[i].getAttribute('sustainable') == "true") {
+							if (bShowSustainable) {
 								aTRs[i].style.backgroundColor = "lightGreen";
 							} else {
 								aTRs[i].style.backgroundColor = "";
@@ -79,14 +78,14 @@
 					return oParent;
 				};
 				window.addEventListener("load", function() {
-					document.forms[0].txtBillAmt.value = calculateBill('menuTable');
-					document.querySelector("#calcBill").addEventListener("click", function() {
-						document.forms[0].txtBillAmt.value = calculateBill('menuTable');
+					document.forms[0].txtBasketAmt.value = calculateBasket('furnitureTable');
+					document.querySelector("#calcBasket").addEventListener("click", function() {
+						document.forms[0].txtBasketAmt.value = calculateBasket('furnitureTable');
 					});
-					document.querySelector("#showVeg").addEventListener("click", function() {
-						highlightVegetarian('menuTable', this.checked);
+					document.querySelector("#showSustainable").addEventListener("click", function() {
+						highlightSustainable('furnitureTable', this.checked);
 					});
-				}); ]]>
+				});  ]]>
 				</script>
 			</head>
 			<body>
