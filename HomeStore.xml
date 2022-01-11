@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding = "UTF-8" ?>
+<menu>
+  <section name="Living Room">
+    <entry>
+        <item>Boom Home Theatre Unit</item>
+        <price>1,500.00</price>
+    </entry>
+    <entry>
+        <item>Recliner Sofa</item>
+        <price>1,000.00</price>
+    </entry>
+    <entry sustainable="true">
+        <item>TV Unit</item>
+        <price>700.00</price>
+    </entry>
+  </section>
+   <section name="Bedroom">
+    <entry>
+        <item>Bed Frame</item>
+        <price>800.00</price>
+    </entry>
+    <entry>
+        <item>Mattress</item>
+        <price>700.00</price>
+    </entry>
+    <entry sustainable="true">
+        <item>Bed Sheets</item>
+        <price>99.00</price>
+    </entry>
+  </section>
+    <section name="Kitchen">
+    <entry>
+        <item>Cooktop</item>
+        <price>900.00</price>
+    </entry>
+    <entry>
+        <item>Fridge</item>
+        <price>1,100.00</price>
+    </entry>
+    <entry sustainable="true">
+        <item>Cookware</item>
+        <price>180.00</price>
+    </entry>
+  </section>
+    <section name="Outdoor">
+    <entry>
+        <item>Outdoor Lounge Setting</item>
+        <price>2,000.00</price>
+    </entry>
+    <entry>
+        <item>Outdoor Armchair</item>
+        <price>900.00</price>
+    </entry>
+    <entry sustainable="true">
+        <item>Poolside Hammock</item>
+        <price>109.00</price>
+    </entry>
+  </section>
+    <section name="Bathroom">
+    <entry>
+        <item>Shower Head</item>
+        <price>250.00</price>
+    </entry>
+    <entry>
+        <item>Toilet Seat</item>
+        <price>400.00</price>
+    </entry>
+    <entry sustainable="true">
+        <item>Shelves and Holders</item>
+        <price>70.00</price>
+    </entry>
+  </section>
+</menu>
